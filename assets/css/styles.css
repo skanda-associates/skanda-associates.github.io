@@ -59,6 +59,28 @@ html, body {
   font-family: var(--font-serif);
 }
 
+/* Text Justification for All Content (Headings remain untouched) */
+p, 
+.text-justify-all,
+.service-card-item p,
+.glass-card p,
+.glass-panel p,
+section p,
+footer p {
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+/* Bullet Points & List Items Justification */
+.service-card-item ul li span,
+.glass-panel ul li span,
+.glass-card ul li span {
+  display: block;
+  flex: 1;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .gold-gradient-text {
   background: linear-gradient(135deg, #f7df94 0%, #d4af37 50%, #aa841c 100%);
   -webkit-background-clip: text;
