@@ -78,12 +78,12 @@ function initServiceTabs() {
       const targetCategory = btn.getAttribute('data-category');
 
       tabBtns.forEach(b => {
-        b.classList.remove('active', 'bg-gold-500', 'text-navy-950');
-        b.classList.add('text-slate-300', 'bg-navy-800/80');
+        b.classList.remove('active', 'gold-gradient-bg', 'text-white');
+        b.classList.add('text-slate-700', 'bg-[#CEE0EF]');
       });
 
-      btn.classList.add('active', 'bg-gold-500', 'text-navy-950');
-      btn.classList.remove('text-slate-300', 'bg-navy-800/80');
+      btn.classList.add('active', 'gold-gradient-bg', 'text-white');
+      btn.classList.remove('text-slate-700', 'bg-[#CEE0EF]');
 
       serviceCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
