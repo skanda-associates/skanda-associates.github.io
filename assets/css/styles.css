@@ -59,26 +59,40 @@ html, body {
   font-family: var(--font-serif);
 }
 
-/* Text Justification for All Content (Headings remain untouched) */
-p, 
-.text-justify-all,
-.service-card-item p,
-.glass-card p,
-.glass-panel p,
-section p,
-footer p {
-  text-align: justify !important;
+/* Text Justification for Narrative Paragraphs */
+p {
+  text-align: justify;
   text-justify: inter-word;
+  text-align-last: left;
 }
 
-/* Bullet Points & List Items Justification */
-.service-card-item ul li span,
-.glass-panel ul li span,
-.glass-card ul li span {
-  display: block;
+/* Service Card Checklist Points */
+.service-card-item ul li span {
   flex: 1;
   text-align: justify;
   text-justify: inter-word;
+  text-align-last: left;
+}
+
+/* Prevent any bullet dot from ever stretching */
+span.rounded-full,
+.rounded-full {
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+/* Institutional / Bank List Items (Strictly Left-Aligned, Crisp Badges) */
+.glass-panel ul li span.rounded-full {
+  display: inline-block !important;
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  flex: 0 0 0.5rem !important;
+}
+
+.glass-panel ul li span.font-medium {
+  text-align: left !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
 }
 
 .gold-gradient-text {
