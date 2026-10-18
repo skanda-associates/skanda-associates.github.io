@@ -6,14 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
 
 :root {
-  --color-page-bg: #dceaf5;
-  --color-page-alt: #cee0ee;
-  --color-darker-blue: #7ba7cf;
-  --color-darker-blue-border: #6997c2;
+  --color-page-bg: #f0f5fa;
+  --color-page-alt: #e6eef6;
   --color-card-bg: #ffffff;
   --color-card-border: #bcd5ea;
-  --color-text-title: #0b1b2d;
-  --color-text-body: #1c3550;
+  --color-text-title: #0f172a;
+  --color-text-body: #334155;
   --color-navy-950: #0b1728;
   --color-navy-900: #12263f;
   --color-navy-800: #1c3b5e;
@@ -43,8 +41,8 @@ html, body {
   overflow-x: hidden;
   position: relative;
   font-family: var(--font-sans);
-  background-color: #dceaf5;
-  color: #1c3550;
+  background-color: #f0f5fa;
+  color: #334155;
 }
 
 /* Custom Scrollbar */
@@ -52,10 +50,10 @@ html, body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #cddff0;
+  background: #e2edf6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #7ba7cf;
+  background: #cbdfe9;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -119,17 +117,12 @@ span.rounded-full,
 }
 
 .architectural-pattern {
-  background-color: #dceaf5;
-  background-image: 
-    linear-gradient(to right, rgba(16, 52, 94, 0.10) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(16, 52, 94, 0.10) 1px, transparent 1px),
-    linear-gradient(to right, rgba(16, 52, 94, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(16, 52, 94, 0.04) 1px, transparent 1px);
-  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+  background-color: #f0f5fa;
+  background-image: radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.06) 0%, rgba(240, 245, 250, 0) 70%);
 }
 
 .radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.14) 0%, rgba(220, 234, 245, 0) 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.08) 0%, rgba(240, 245, 250, 0) 70%);
 }
 
 /* Clean Executive Cards & Panels */
@@ -146,11 +139,11 @@ span.rounded-full,
 }
 
 .glass-nav {
-  background: rgba(123, 167, 207, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid #6997c2;
-  box-shadow: 0 4px 18px rgba(15, 35, 65, 0.08);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
 }
 
 .glass-card {
@@ -198,11 +191,11 @@ span.rounded-full,
 
 /* Mobile Bottom Action Bar */
 .mobile-action-bar {
-  background: rgba(123, 167, 207, 0.96);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid #6997c2;
-  box-shadow: 0 -4px 20px rgba(15, 35, 65, 0.08);
+  border-top: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.06);
 }
 
 /* Responsive Image Containers */
