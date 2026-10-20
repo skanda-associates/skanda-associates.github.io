@@ -242,6 +242,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* Project Gallery Lightbox Modal */
 #project-gallery-modal {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   transition: opacity 0.25s ease, visibility 0.25s ease;
   overflow-y: auto;
 }
