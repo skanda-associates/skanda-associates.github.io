@@ -239,3 +239,42 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     opacity: 0;
   }
 }
+
+/* Project Gallery Lightbox Modal */
+#project-gallery-modal {
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+#project-gallery-modal.hidden {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+#project-gallery-modal:not(.hidden) {
+  display: flex !important;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-dialog-content {
+  animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.gallery-thumb-item {
+  transition: all 0.2s ease;
+}
+.gallery-thumb-item:hover {
+  transform: translateY(-2px);
+}
+.gallery-thumb-item.active {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.6);
+  opacity: 1 !important;
+}
