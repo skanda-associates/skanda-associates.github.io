@@ -266,15 +266,19 @@ function initBackToTop() {
   const backToTopBtn = document.getElementById('back-to-top');
   if (!backToTopBtn) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 450) {
+  function handleScroll() {
+    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollY > 350) {
       backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
       backToTopBtn.classList.add('opacity-100');
     } else {
       backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
       backToTopBtn.classList.remove('opacity-100');
     }
-  }, { passive: true });
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll, { passive: true });
 
   backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
