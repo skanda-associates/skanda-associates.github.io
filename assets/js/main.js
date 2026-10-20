@@ -420,10 +420,10 @@ const PROJECT_GALLERIES = {
     subtitle: 'Luxury High-Rise Residential & Township Projects (Mantri Square, Mantri Espana, Mantri Greens)',
     images: [
       { src: 'assets/images/projects/mantri-projects/img-1.jpg', caption: 'Mantri Square Mall Landmark Commercial Facade (Malleshwaram)' },
-      { src: 'assets/images/projects/mantri-projects/img-2.jpg', caption: 'Grand Indoor Shopping Atrium & Escalator Circulation Network' },
-      { src: 'assets/images/projects/mantri-projects/img-3.jpg', caption: 'Mantri Espana Luxury Residential Architecture (Outer Ring Road)' },
-      { src: 'assets/images/projects/mantri-projects/img-4.jpg', caption: 'Mantri Greens High-Rise Residential Towers (Malleshwaram)' },
-      { src: 'assets/images/projects/mantri-projects/img-5.jpg', caption: 'Mantri Tranquil Residential Enclave & Landscape Campus' }
+      { src: 'assets/images/projects/mantri-projects/img-2.jpg', caption: 'Mantri Espana Spanish Mediterranean Luxury Architecture (Outer Ring Road, Bellandur)' },
+      { src: 'assets/images/projects/mantri-projects/img-3.jpg', caption: 'Mantri Greens High-Rise Residential Towers (Malleshwaram)' },
+      { src: 'assets/images/projects/mantri-projects/img-4.jpg', caption: 'Mantri Tranquil Sprawling Hillside Residential Township (Kanakapura Road)' },
+      { src: 'assets/images/projects/mantri-projects/img-5.jpg', caption: 'Mantri Altius Ultra-Luxury High-Rise Sky Residences (Bengaluru)' }
     ]
   },
   'golden-gate-50floors': {
@@ -661,15 +661,6 @@ function initProjectGalleryModal() {
     });
   }
 
-  // Pause on hover over slide container
-  if (slideContainer) {
-    slideContainer.addEventListener('mouseenter', () => {
-      if (isAutoplayActive) stopAutoplay();
-    });
-    slideContainer.addEventListener('mouseleave', () => {
-      if (isAutoplayActive) startAutoplay();
-    });
-  }
 
   // Click outside dialog to close
   modal.addEventListener('click', (e) => {
