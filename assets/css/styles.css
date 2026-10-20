@@ -308,3 +308,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   white-space: normal !important;
   line-height: 1.4;
 }
+
+/* Lightbox Modal Text Alignments (Override global paragraph justification) */
+#modal-project-title,
+#modal-project-sub,
+#modal-img-caption {
+  text-align: left !important;
+  text-align-last: left !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  white-space: normal !important;
+}
+
+#modal-project-sub {
+  display: block !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
+#modal-img-caption {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
