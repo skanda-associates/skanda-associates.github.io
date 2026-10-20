@@ -628,6 +628,7 @@ function initProjectGalleryModal() {
 
     // Show modal
     modal.classList.remove('hidden');
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
 
     // Start slideshow
@@ -641,6 +642,7 @@ function initProjectGalleryModal() {
   function closeModal() {
     stopAutoplay();
     modal.classList.add('hidden');
+    document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
   }
 
@@ -673,6 +675,38 @@ function initProjectGalleryModal() {
     }
   });
 
+  // Prevent background page scrolling while modal is open (Mouse Wheel & Touch Drag)
+  modal.addEventListener('wheel', (e) => {
+    // If modal content does not vertically overflow the viewport, completely cancel wheel events
+    if (modal.scrollHeight <= modal.clientHeight) {
+      e.preventDefault();
+      return;
+    }
+    // If modal has vertical overflow (e.g. low-height screens), contain scroll strictly within modal
+    const atTop = modal.scrollTop <= 0 && e.deltaY < 0;
+    const atBottom = (modal.scrollTop + modal.clientHeight >= modal.scrollHeight - 1) && e.deltaY > 0;
+    if (atTop || atBottom) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  modal.addEventListener('touchmove', (e) => {
+    // Allow horizontal swiping/scrolling on the thumbnail strip
+    if (e.target.closest('#modal-thumbnails')) {
+      return;
+    }
+    // If modal content fits in viewport, prevent vertical dragging from moving the background
+    if (modal.scrollHeight <= modal.clientHeight) {
+      e.preventDefault();
+      return;
+    }
+    const atTop = modal.scrollTop <= 0;
+    const atBottom = (modal.scrollTop + modal.clientHeight >= modal.scrollHeight - 1);
+    if (atTop || atBottom) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (modal.classList.contains('hidden')) return;
@@ -686,6 +720,8 @@ function initProjectGalleryModal() {
     } else if (e.key === ' ') {
       e.preventDefault();
       toggleAutoplay();
+    } else if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End'].includes(e.key)) {
+      e.preventDefault();
     }
   });
 

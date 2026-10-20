@@ -247,6 +247,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   -webkit-backdrop-filter: blur(4px);
   transition: opacity 0.25s ease, visibility 0.25s ease;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 #project-gallery-modal.hidden {
   display: none !important;
