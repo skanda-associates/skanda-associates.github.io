@@ -243,6 +243,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* Project Gallery Lightbox Modal */
 #project-gallery-modal {
   transition: opacity 0.25s ease, visibility 0.25s ease;
+  overflow-y: auto;
 }
 #project-gallery-modal.hidden {
   display: none !important;
@@ -256,6 +257,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .modal-dialog-content {
   animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  max-height: 94vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 @keyframes modalScaleIn {
   from {

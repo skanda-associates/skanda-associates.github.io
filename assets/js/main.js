@@ -514,7 +514,10 @@ function initProjectGalleryModal() {
         if (i === currentIndex) {
           th.classList.add('active');
           th.style.opacity = '1';
-          th.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          if (thumbsContainer) {
+            const scrollLeftTarget = th.offsetLeft - (thumbsContainer.clientWidth / 2) + (th.clientWidth / 2);
+            thumbsContainer.scrollTo({ left: scrollLeftTarget, behavior: 'smooth' });
+          }
         } else {
           th.classList.remove('active');
           th.style.opacity = '0.5';
@@ -610,6 +613,11 @@ function initProjectGalleryModal() {
     if (autoplayIcon) {
       autoplayIcon.setAttribute('data-lucide', 'pause');
       if (window.lucide) window.lucide.createIcons();
+    }
+
+    const dialogContent = modal.querySelector('.modal-dialog-content');
+    if (dialogContent) {
+      dialogContent.scrollTop = 0;
     }
 
     updateSlide(0, false);
